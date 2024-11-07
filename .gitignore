@@ -6,3 +6,4 @@ main.c
 old_*.c
 *.gch
 *.o
+*.a

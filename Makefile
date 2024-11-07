@@ -3,25 +3,29 @@ NAME = libft.a
 COMPILER = cc
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c \
-ft_isprint.c ft_strchr.c ft_strlen.c \
-ft_strrchr.c ft_tolower.c ft_toupper.c
+FUNCTIONS = ft_isalnum ft_isalpha ft_isascii ft_isdigit ft_isprint \
+ft_strchr ft_strlen ft_strrchr ft_tolower ft_toupper
+SRCS = $(addsuffix .c, $(FUNCTIONS))
 
 OBJS := $(SRCS:%.c=%.o)
+	@"TEST"
 
 $(NAME): $(OBJS)
-	$(COMPILER) $(CFLAGS) $^ -o $@
+	ar rcs $(NAME) $(OBJS)
 
-%.o: %.c
-	$(COMPILER) $(CFLAGS) -c $< -o $@
+# %.o: %.c
+# 	$(COMPILER) $(CFLAGS) -c $< -o $@
 
 all: $(NAME)
+	@echo "Building $(NAME)"
 
 clean:
-	rm -f $(OBJS)
+	@rm -f $(OBJS)
+	@echo "Cleaned all objects."
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
+	@echo "Cleaned all files."
 
 re: fclean all
 
