@@ -6,7 +6,7 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 15:31:02 by vsoares-          #+#    #+#             */
-/*   Updated: 2024/11/07 18:59:41 by vsoares-         ###   ########.fr       */
+/*   Updated: 2024/11/07 21:16:57 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ size_t	ft_strlen(const char *s);
 // strlcpy
 // strlcat
 
-// strchr
-// strrchr
+char	*ft_strchr(const char *s, int c);
+char	*ft_strrchr(const char *s, int c);
 // strncmp
 
 // strnstr
