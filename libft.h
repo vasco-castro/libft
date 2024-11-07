@@ -6,7 +6,7 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 15:31:02 by vsoares-          #+#    #+#             */
-/*   Updated: 2024/11/07 18:05:08 by vsoares-         ###   ########.fr       */
+/*   Updated: 2024/11/07 18:59:41 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 # include <stdio.h>
 
 /* IS FUNCTIONS */
-int	ft_isalpha(int c);
-int	ft_isdigit(int c);
-int	ft_isalnum(int c);
-int	ft_isascii(int c);
-int	ft_isprint(int c);
+int		ft_isalpha(int c);
+int		ft_isdigit(int c);
+int		ft_isalnum(int c);
+int		ft_isascii(int c);
+int		ft_isprint(int c);
 
 /* MEMORY FUNCTIONS */
 // bzero
@@ -32,6 +32,7 @@ int	ft_isprint(int c);
 // memcmp
 
 /* STRING FUNCTIONS */
+size_t	ft_strlen(const char *s);
 // strlcpy
 // strlcat
 
@@ -41,8 +42,8 @@ int	ft_isprint(int c);
 
 // strnstr
 
-// toupper
-// tolower
+int		ft_toupper(int c);
+int		ft_tolower(int c);
 
 // atoi
 
