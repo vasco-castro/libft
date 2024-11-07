@@ -6,7 +6,7 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 18:22:58 by vsoares-          #+#    #+#             */
-/*   Updated: 2024/11/07 18:47:46 by vsoares-         ###   ########.fr       */
+/*   Updated: 2024/11/07 22:51:18 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ size_t	ft_strlen(const char *s)
 {
 	size_t	len;
 
+	len = 0;
 	while (s[len])
 		len++;
 	return (len);
