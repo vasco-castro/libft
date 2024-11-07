@@ -6,11 +6,11 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 15:48:11 by vsoares-          #+#    #+#             */
-/*   Updated: 2024/10/28 15:50:06 by vsoares-         ###   ########.fr       */
+/*   Updated: 2024/11/07 18:19:03 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(char c)
+int	ft_isprint(int c)
 {
-	return (c != 127 || c < 32);
+	return (c >= 32 && c <= 126);
 }
