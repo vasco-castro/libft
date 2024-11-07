@@ -1,0 +1,7 @@
+ex*.c
+*.out
+main.c
+*.vscode
+*.swp
+old_*.c
+*.gch
