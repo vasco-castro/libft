@@ -7,3 +7,5 @@ old_*.c
 *.gch
 *.o
 *.a
+
+libftTester
