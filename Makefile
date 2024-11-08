@@ -8,7 +8,6 @@ ft_strchr ft_strlen ft_strrchr ft_tolower ft_toupper
 SRCS = $(addsuffix .c, $(FUNCTIONS))
 
 OBJS := $(SRCS:%.c=%.o)
-	@"TEST"
 
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
