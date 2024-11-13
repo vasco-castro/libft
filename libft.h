@@ -6,7 +6,7 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 15:31:02 by vsoares-          #+#    #+#             */
-/*   Updated: 2024/11/08 20:32:43 by vsoares-         ###   ########.fr       */
+/*   Updated: 2024/11/13 21:32:59 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <stdlib.h>
 # include <stdio.h>
+# include <limits.h>
+# include <stdint.h>
 
 /* IS FUNCTIONS */
 int		ft_isalpha(int c);
@@ -48,7 +50,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 
-// ft_calloc
-// ft_strdup
+void	*ft_calloc(size_t count, size_t size);
+char	*ft_strdup(const char *s1);
 
 #endif
