@@ -6,7 +6,7 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 20:58:29 by vsoares-          #+#    #+#             */
-/*   Updated: 2024/11/13 22:14:34 by vsoares-         ###   ########.fr       */
+/*   Updated: 2024/11/14 17:11:07 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ void	*ft_calloc(size_t count, size_t size)
 	total_size = count * size;
 	if (count && ((total_size / count) != size))
 		return (NULL);
-	alloc = malloc(count * size);
+	alloc = malloc(total_size);
 	if (!alloc)
 		return (NULL);
-	ft_bzero(alloc, count * size);
+	ft_bzero(alloc, total_size);
 	return (alloc);
 }
