@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/14 17:20:49 by vsoares-          #+#    #+#             */
-/*   Updated: 2024/11/14 19:30:08 by vsoares-         ###   ########.fr       */
+/*   Created: 2024/11/14 19:18:04 by vsoares-          #+#    #+#             */
+/*   Updated: 2024/11/14 19:38:41 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(const char *s, unsigned int start, size_t len)
+char	*ft_strjoin(const char *s1, const char *s2)
 {
-	size_t	slen;
-	char	*sub;
+	char	*str;
+	size_t	s1_len;
+	size_t	s2_len;
 
-	slen = ft_strlen(s);
-	if (start > slen)
-		return (ft_strdup(""));
-	if (len > slen - start)
-		len = slen - start;
-	sub = ft_calloc(len + 1, sizeof(char));
-	if (!sub)
+	s1_len = ft_strlen(s1);
+	s2_len = ft_strlen(s2);
+	str = malloc(s1_len + s2_len + 1);
+	if (!str || !s1 || !s2)
 		return (NULL);
-	sub = ft_memcpy(sub, s + start, len);
-	return (sub);
+	ft_memcpy(str, s1, s1_len);
+	ft_memcpy(str + s1_len, s2, s2_len);
+	return (str);
 }
