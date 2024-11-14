@@ -7,7 +7,7 @@ FUNCTIONS = ft_isalnum ft_isalpha ft_isascii ft_isdigit ft_isprint \
 ft_strchr ft_strlen ft_strrchr ft_tolower ft_toupper ft_strncmp ft_strnstr \
 ft_atoi ft_strlcpy ft_strlcat \
 ft_memset ft_bzero ft_memcpy ft_memmove ft_memchr ft_memcmp ft_calloc \
-ft_strdup ft_substr ft_strjoin ft_strtrim
+ft_strdup ft_substr ft_strjoin ft_strtrim ft_split
 
 SRCS = $(addsuffix .c, $(FUNCTIONS))
 
