@@ -6,7 +6,7 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 22:42:13 by vsoares-          #+#    #+#             */
-/*   Updated: 2024/11/16 19:15:05 by vsoares-         ###   ########.fr       */
+/*   Updated: 2024/11/16 19:26:53 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ static int	count_tokens(char *str, char c)
 	words = 0;
 	while (str[i])
 	{
-		while(str[i] && str[i] == c)
+		while (str[i] && str[i] == c)
 			i++;
 		if (str[i])
 		{
-			while(str[i] && str[i] != c)
+			while (str[i] && str[i] != c)
 				i++;
 			words++;
 		}
@@ -43,35 +43,25 @@ static size_t	wordlen(const char *str, char c)
 	return (len);
 }
 
-static void *destroy(char **tab, size_t len)
+static void	*destroy(char **tab, size_t len)
 {
 	while (len)
 		free(tab[len--]);
 	return (NULL);
 }
 
-char	**ft_split(const char *s, char c)
+static char	**split(const char *s, char c, char	**tab, size_t words)
 {
-	char	**tab;
-	size_t	words;
-	size_t	wlen;
 	size_t	i;
 	size_t	j;
+	size_t	wlen;
 
-	if (!s)
-		return (NULL);
-	words = count_tokens((char *) s, c);
-	tab = malloc((words + 1) * sizeof(char *));
-	if (!tab)
-		return (NULL);
 	i = 0;
 	j = 0;
 	while (i < words)
 	{
-		while (s[j] && (s[j] == c))
+		while (s[j] && s[j] == c)
 			j++;
-		if(!s[j])
-			break;
 		wlen = wordlen(s + j, c);
 		tab[i] = ft_substr(s + j, 0, wlen);
 		if (!tab[i])
@@ -81,4 +71,18 @@ char	**ft_split(const char *s, char c)
 	}
 	tab[i] = NULL;
 	return (tab);
+}
+
+char	**ft_split(const char *s, char c)
+{
+	char	**tab;
+	size_t	words;
+
+	if (!s)
+		return (NULL);
+	words = count_tokens((char *) s, c);
+	tab = malloc((words + 1) * sizeof(char *));
+	if (!tab)
+		return (NULL);
+	return (split(s, c, tab, words));
 }
