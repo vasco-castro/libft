@@ -6,7 +6,7 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 19:52:45 by vsoares-          #+#    #+#             */
-/*   Updated: 2024/11/16 21:10:43 by vsoares-         ###   ########.fr       */
+/*   Updated: 2024/11/16 21:12:17 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	nbrsize(long nb)
 		nb *= -1;
 		count++;
 	}
-	while(nb > 0)
+	while (nb > 0)
 	{
 		nb /= 10;
 		count++;
