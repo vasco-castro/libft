@@ -6,27 +6,34 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 22:42:13 by vsoares-          #+#    #+#             */
-/*   Updated: 2024/11/14 23:02:28 by vsoares-         ###   ########.fr       */
+/*   Updated: 2024/11/16 19:15:05 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	countwords(char *str, char c)
+static int	count_tokens(char *str, char c)
 {
 	size_t	i;
 	size_t	words;
 
-	while (str)
+	i = 0;
+	words = 0;
+	while (str[i])
 	{
-		while (str[i] != c)
+		while(str[i] && str[i] == c)
 			i++;
-		words++;
+		if (str[i])
+		{
+			while(str[i] && str[i] != c)
+				i++;
+			words++;
+		}
 	}
 	return (words);
 }
 
-static size_t	wordlen(char *str, char c)
+static size_t	wordlen(const char *str, char c)
 {
 	size_t	len;
 
@@ -36,14 +43,42 @@ static size_t	wordlen(char *str, char c)
 	return (len);
 }
 
+static void *destroy(char **tab, size_t len)
+{
+	while (len)
+		free(tab[len--]);
+	return (NULL);
+}
+
 char	**ft_split(const char *s, char c)
 {
 	char	**tab;
 	size_t	words;
 	size_t	wlen;
+	size_t	i;
+	size_t	j;
 
-	words = countwords(s, c);
-	wlen = 0;
-	tab = malloc(words * (wlen + 1) * sizeof(char *));
+	if (!s)
+		return (NULL);
+	words = count_tokens((char *) s, c);
+	tab = malloc((words + 1) * sizeof(char *));
+	if (!tab)
+		return (NULL);
+	i = 0;
+	j = 0;
+	while (i < words)
+	{
+		while (s[j] && (s[j] == c))
+			j++;
+		if(!s[j])
+			break;
+		wlen = wordlen(s + j, c);
+		tab[i] = ft_substr(s + j, 0, wlen);
+		if (!tab[i])
+			return (destroy(tab, i));
+		j += wlen;
+		i++;
+	}
+	tab[i] = NULL;
 	return (tab);
 }
