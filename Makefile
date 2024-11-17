@@ -7,7 +7,8 @@ FUNCTIONS = ft_isalnum ft_isalpha ft_isascii ft_isdigit ft_isprint \
 ft_strchr ft_strlen ft_strrchr ft_tolower ft_toupper ft_strncmp ft_strnstr \
 ft_atoi ft_strlcpy ft_strlcat \
 ft_memset ft_bzero ft_memcpy ft_memmove ft_memchr ft_memcmp ft_calloc \
-ft_strdup ft_substr ft_strjoin ft_strtrim ft_split ft_itoa ft_strmapi ft_striteri
+ft_strdup ft_substr ft_strjoin ft_strtrim ft_split ft_itoa ft_strmapi ft_striteri \
+ft_putchar_fd ft_putstr_fd ft_putendl_fd ft_putnbr_fd \
 
 SRCS = $(addsuffix .c, $(FUNCTIONS))
 
@@ -22,12 +23,11 @@ $(NAME): $(OBJS)
 all: $(NAME)
 	@echo "Building $(NAME)"
 
-t: test
+# TODO: REMOVE THIS TEST RULE & check the rest
+t: $(NAME)
 	@echo Running main test file.
-	@./a.out
-
-test: $(NAME)
-	@$(COMPILER) $(CFLAGS) main.c $(NAME)
+	@$(COMPILER) $(CFLAGS) main.c $(NAME) -o test
+	@./test
 
 clean:
 	@rm -f $(OBJS)
@@ -35,6 +35,7 @@ clean:
 
 fclean: clean
 	@rm -f $(NAME)
+	@rm -f test
 	@echo "Cleaned all files."
 
 re: fclean all

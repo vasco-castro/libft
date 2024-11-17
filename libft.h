@@ -6,13 +6,14 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 15:31:02 by vsoares-          #+#    #+#             */
-/*   Updated: 2024/11/17 18:33:34 by vsoares-         ###   ########.fr       */
+/*   Updated: 2024/11/17 18:52:03 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
 # include <limits.h>
@@ -45,6 +46,11 @@ char	**ft_split(const char *s, char c);
 
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 
 int		ft_atoi(const char *str);
 char	*ft_itoa(int n);

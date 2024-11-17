@@ -9,3 +9,4 @@ old_*.c
 *.a
 
 libftTester
+test
