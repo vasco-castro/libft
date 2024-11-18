@@ -6,7 +6,7 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 18:22:38 by vsoares-          #+#    #+#             */
-/*   Updated: 2024/11/08 19:18:30 by vsoares-         ###   ########.fr       */
+/*   Updated: 2024/11/18 23:41:24 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,24 +30,21 @@ static int	issignal(int c)
 int	ft_atoi(const char *str)
 {
 	size_t			i;
-	unsigned long	res;
+	unsigned long	nb;
 	int				signal;
 
 	i = 0;
 	signal = 1;
-	res = 0;
+	nb = 0;
 	while (isspace(str[i]))
 		i++;
 	if (issignal(str[i]) != 0)
+		signal *= issignal(str[i++]);
+	while (ft_isdigit(str[i]) && nb <= INT_MAX)
 	{
-		signal *= issignal(str[i]);
+		nb *= 10;
+		nb += str[i] - '0';
 		i++;
 	}
-	while (ft_isdigit(str[i]))
-	{
-		res *= 10;
-		res += str[i] - '0';
-		i++;
-	}
-	return (res * signal);
+	return (nb * signal);
 }

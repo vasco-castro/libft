@@ -6,7 +6,7 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 15:31:02 by vsoares-          #+#    #+#             */
-/*   Updated: 2024/11/18 15:52:15 by vsoares-         ###   ########.fr       */
+/*   Updated: 2024/11/18 23:41:33 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }	t_list;
-
-// TODO: CHECK ALL PROTECTIONS FROM ORIGINAL FUNCTIONS
 
 /* CHECK FUNCTIONS */
 int		ft_isalpha(int c);

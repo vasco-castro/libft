@@ -6,7 +6,7 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 22:42:13 by vsoares-          #+#    #+#             */
-/*   Updated: 2024/11/16 19:26:53 by vsoares-         ###   ########.fr       */
+/*   Updated: 2024/11/18 23:24:47 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int	count_tokens(char *str, char c)
 	return (words);
 }
 
-static size_t	wordlen(const char *str, char c)
+static size_t	tokenlen(const char *str, char c)
 {
 	size_t	len;
 
@@ -47,6 +47,8 @@ static void	*destroy(char **tab, size_t len)
 {
 	while (len)
 		free(tab[len--]);
+	free(tab[len]);
+	free(tab);
 	return (NULL);
 }
 
@@ -62,7 +64,7 @@ static char	**split(const char *s, char c, char	**tab, size_t words)
 	{
 		while (s[j] && s[j] == c)
 			j++;
-		wlen = wordlen(s + j, c);
+		wlen = tokenlen(s + j, c);
 		tab[i] = ft_substr(s + j, 0, wlen);
 		if (!tab[i])
 			return (destroy(tab, i));

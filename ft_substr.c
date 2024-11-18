@@ -6,7 +6,7 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 17:20:49 by vsoares-          #+#    #+#             */
-/*   Updated: 2024/11/14 19:30:08 by vsoares-         ###   ########.fr       */
+/*   Updated: 2024/11/17 19:55:47 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,5 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	sub = ft_calloc(len + 1, sizeof(char));
 	if (!sub)
 		return (NULL);
-	sub = ft_memcpy(sub, s + start, len);
-	return (sub);
+	return (ft_memcpy(sub, s + start, len));
 }
