@@ -6,19 +6,18 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 20:58:53 by vsoares-          #+#    #+#             */
-/*   Updated: 2024/11/13 21:44:07 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/02/16 14:33:22 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+char	*ft_strdup(const char *src)
 {
-	char	*str;
+	char	*dest;
 
-	str = malloc(ft_strlen(s1) + 1);
-	if (!str)
+	dest = malloc(ft_strlen(src) + 1);
+	if (!dest)
 		return (NULL);
-	ft_memcpy(str, s1, ft_strlen(s1) + 1);
-	return (str);
+	return (ft_memcpy(dest, src, ft_strlen(src) + 1));
 }
