@@ -6,7 +6,7 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 19:52:45 by vsoares-          #+#    #+#             */
-/*   Updated: 2024/11/18 21:39:27 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/02/20 15:38:59 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ static int	nbrsize(long nb)
 	return (count);
 }
 
-char	*ft_itoa(int n)
+t_string	ft_itoa(int n)
 {
-	char	*number;
-	long	nb;
-	size_t	nlen;
+	t_string	number;
+	long		nb;
+	size_t		nlen;
 
 	nb = n;
 	nlen = nbrsize(nb);

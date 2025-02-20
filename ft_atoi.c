@@ -6,7 +6,7 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 18:22:38 by vsoares-          #+#    #+#             */
-/*   Updated: 2024/11/18 23:41:24 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/02/20 15:09:32 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	issignal(int c)
 		return (0);
 }
 
-int	ft_atoi(const char *str)
+int	ft_atoi(const t_string str)
 {
 	size_t			i;
 	unsigned long	nb;

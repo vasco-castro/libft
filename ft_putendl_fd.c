@@ -6,13 +6,13 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:49:23 by vsoares-          #+#    #+#             */
-/*   Updated: 2024/11/17 19:04:06 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/02/20 15:09:23 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+void	ft_putendl_fd(t_string s, int fd)
 {
 	if (s)
 	{

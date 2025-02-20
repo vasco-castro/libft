@@ -6,16 +6,16 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:19:18 by vsoares-          #+#    #+#             */
-/*   Updated: 2024/11/17 18:30:50 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/02/20 15:26:16 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
+t_string	ft_strmapi(const t_string s, char (*f)(unsigned int, char))
 {
-	char	*str;
-	size_t	i;
+	t_string	str;
+	size_t		i;
 
 	if (!s || !f)
 		return (NULL);

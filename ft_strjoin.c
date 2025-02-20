@@ -6,13 +6,13 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 19:18:04 by vsoares-          #+#    #+#             */
-/*   Updated: 2024/11/18 23:08:02 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/02/20 15:26:00 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	my_strlen(const char *s)
+static size_t	my_strlen(const t_string s)
 {
 	size_t	len;
 
@@ -24,11 +24,11 @@ static size_t	my_strlen(const char *s)
 	return (len);
 }
 
-char	*ft_strjoin(const char *s1, const char *s2)
+t_string	ft_strjoin(const t_string s1, const t_string s2)
 {
-	char	*str;
-	size_t	s1_len;
-	size_t	s2_len;
+	t_string	str;
+	size_t		s1_len;
+	size_t		s2_len;
 
 	s1_len = my_strlen(s1);
 	s2_len = my_strlen(s2);

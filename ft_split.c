@@ -6,13 +6,13 @@
 /*   By: vsoares- <vsoares-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 22:42:13 by vsoares-          #+#    #+#             */
-/*   Updated: 2024/11/18 23:24:47 by vsoares-         ###   ########.fr       */
+/*   Updated: 2025/02/20 15:25:36 by vsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count_tokens(char *str, char c)
+static int	count_tokens(t_string str, char c)
 {
 	size_t	i;
 	size_t	words;
@@ -33,7 +33,7 @@ static int	count_tokens(char *str, char c)
 	return (words);
 }
 
-static size_t	tokenlen(const char *str, char c)
+static size_t	tokenlen(const t_string str, char c)
 {
 	size_t	len;
 
@@ -43,7 +43,7 @@ static size_t	tokenlen(const char *str, char c)
 	return (len);
 }
 
-static void	*destroy(char **tab, size_t len)
+static void	*destroy(t_string *tab, size_t len)
 {
 	while (len)
 		free(tab[len--]);
@@ -52,7 +52,7 @@ static void	*destroy(char **tab, size_t len)
 	return (NULL);
 }
 
-static char	**split(const char *s, char c, char	**tab, size_t words)
+static t_string	*split(const t_string s, char c, t_string *tab, size_t words)
 {
 	size_t	i;
 	size_t	j;
@@ -75,15 +75,15 @@ static char	**split(const char *s, char c, char	**tab, size_t words)
 	return (tab);
 }
 
-char	**ft_split(const char *s, char c)
+t_string	*ft_split(const t_string s, char c)
 {
-	char	**tab;
-	size_t	words;
+	t_string	*tab;
+	size_t		words;
 
 	if (!s)
 		return (NULL);
-	words = count_tokens((char *) s, c);
-	tab = malloc((words + 1) * sizeof(char *));
+	words = count_tokens((t_string) s, c);
+	tab = malloc((words + 1) * sizeof(t_string));
 	if (!tab)
 		return (NULL);
 	return (split(s, c, tab, words));
